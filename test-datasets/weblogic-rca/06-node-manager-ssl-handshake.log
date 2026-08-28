@@ -1,0 +1,10 @@
+####<2026-06-23 14:44:10 IST> <Info> <NodeManager> <host-wls-02> <main> <> <> <> <Starting Node Manager listener on port 5556>
+####<2026-06-23 14:44:12 IST> <Info> <NodeManager> <host-wls-02> <main> <> <> <> <SecureListener=true, KeyStores=DemoIdentityAndDemoTrust>
+####<2026-06-23 14:45:01 IST> <Warning> <NodeManager> <host-wls-02> <Thread-8> <> <> <> <Authentication request received from AdminServer at 10.40.18.12>
+####<2026-06-23 14:45:01 IST> <Error> <NodeManager> <host-wls-02> <Thread-8> <> <> <> <javax.net.ssl.SSLHandshakeException: No subject alternative DNS name matching host-wls-02.internal found>
+####<2026-06-23 14:45:02 IST> <Error> <NodeManager> <host-wls-02> <Thread-8> <> <> <> <Rejected connection from AdminServer because Node Manager certificate CN=old-host-wls-02 does not match host-wls-02.internal>
+####<2026-06-23 14:45:07 IST> <Warning> <AdminServer> <admin-01> <ExecuteThread: '11' for queue: 'weblogic.kernel.Default'> <> <> <bea-300044> <Machine host-wls-02 is not reachable through Node Manager>
+####<2026-06-23 14:45:08 IST> <Error> <Lifecycle> <admin-01> <ExecuteThread: '11' for queue: 'weblogic.kernel.Default'> <> <> <bea-300037> <Unable to start server ms-inventory-02 on machine host-wls-02>
+####<2026-06-23 14:45:17 IST> <Info> <Diagnostics> <admin-01> <Thread-11> <> <> <diag-rca-5001> <Confirmed fact: AdminServer reached Node Manager TCP port but SSL hostname verification failed>
+####<2026-06-23 14:45:18 IST> <Info> <Diagnostics> <admin-01> <Thread-11> <> <> <diag-rca-5002> <Probable cause: node manager certificate was not regenerated after host rename>
+####<2026-06-23 14:45:20 IST> <Info> <Diagnostics> <admin-01> <Thread-11> <> <> <diag-rca-5003> <Recommended action: replace Node Manager identity certificate with SAN host-wls-02.internal or temporarily adjust hostname verification only for controlled testing>

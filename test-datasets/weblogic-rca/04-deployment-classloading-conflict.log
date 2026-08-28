@@ -1,0 +1,12 @@
+####<2026-06-23 11:31:40 IST> <Info> <Deployer> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-149059> <Application portal-ui is transitioning from PREPARED to ACTIVE>
+####<2026-06-23 11:31:42 IST> <Info> <WebAppModule> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-2156203> <Web module /portal initialized>
+####<2026-06-23 11:31:44 IST> <Warning> <ClassLoader> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-2162600> <Duplicate class javax.ws.rs.core.Application found in WEB-INF/lib/jsr311-api-1.1.1.jar and server module jersey-bundle>
+####<2026-06-23 11:31:45 IST> <Error> <HTTP> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-101216> <Servlet JerseyServlet failed to preload on startup>
+####<2026-06-23 11:31:45 IST> <Error> <HTTP> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-101020> <java.lang.NoSuchMethodError: javax.ws.rs.core.Application.getProperties()Ljava/util/Map;>
+####<2026-06-23 11:31:46 IST> <Error> <Deployer> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-149265> <Failure occurred in the execution of deployment request with ID 973001 for task 25>
+####<2026-06-23 11:31:47 IST> <Warning> <Deployer> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-149078> <Stack trace: java.lang.NoSuchMethodError caused by mixed JAX-RS API versions>
+####<2026-06-23 11:31:49 IST> <Info> <Deployer> <ms-portal-01> <ExecuteThread: '8' for queue: 'weblogic.kernel.Default'> <> <> <bea-149061> <Application portal-ui is transitioning from ACTIVE to FAILED>
+####<2026-06-23 11:32:03 IST> <Warning> <HTTP> <ms-portal-01> <ExecuteThread: '13' for queue: 'weblogic.kernel.Default'> <> <> <bea-101083> <Connection request for /portal/health returned 503 because web application is unavailable>
+####<2026-06-23 11:32:08 IST> <Info> <Diagnostics> <ms-portal-01> <Thread-5> <> <> <diag-rca-3001> <Confirmed fact: deployment failed during servlet preload, before external backend calls were attempted>
+####<2026-06-23 11:32:10 IST> <Info> <Diagnostics> <ms-portal-01> <Thread-5> <> <> <diag-rca-3002> <Probable cause: application bundled older jsr311-api jar conflicts with WebLogic-provided JAX-RS module>
+####<2026-06-23 11:32:16 IST> <Info> <Diagnostics> <ms-portal-01> <Thread-5> <> <> <diag-rca-3003> <Recommended action: remove jsr311-api-1.1.1.jar or configure prefer-application-packages consistently>

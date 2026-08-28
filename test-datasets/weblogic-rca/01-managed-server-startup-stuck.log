@@ -1,0 +1,19 @@
+####<2026-06-23 08:14:02 IST> <Info> <Server> <ms-payments-01> <main> <<WLS Kernel>> <> <bea-000000> <Starting WebLogic Server with Java HotSpot(TM) 64-Bit Server VM Version 17.0.10>
+####<2026-06-23 08:14:05 IST> <Info> <Management> <ms-payments-01> <main> <<WLS Kernel>> <> <bea-141107> <Version: WebLogic Server 14.1.1.0.0>
+####<2026-06-23 08:14:11 IST> <Info> <Security> <ms-payments-01> <main> <<WLS Kernel>> <> <bea-090082> <Security initializing using realm myrealm>
+####<2026-06-23 08:14:24 IST> <Info> <JDBC> <ms-payments-01> <ExecuteThread: '2' for queue: 'weblogic.kernel.Default'> <> <> <bea-001177> <Creating connection pool FinanceXADataSource>
+####<2026-06-23 08:14:25 IST> <Warning> <JDBC> <ms-payments-01> <ExecuteThread: '2' for queue: 'weblogic.kernel.Default'> <> <> <bea-001129> <Received exception while creating connection for pool FinanceXADataSource: IO Error: The Network Adapter could not establish the connection>
+####<2026-06-23 08:14:26 IST> <Warning> <JDBC> <ms-payments-01> <ExecuteThread: '2' for queue: 'weblogic.kernel.Default'> <> <> <bea-001156> <Stack trace: oracle.net.ns.NetException: The Network Adapter could not establish the connection>
+####<2026-06-23 08:14:28 IST> <Info> <Deployer> <ms-payments-01> <ExecuteThread: '4' for queue: 'weblogic.kernel.Default'> <> <> <bea-149059> <Module payments-app#payments-ejb.jar is transitioning from PREPARED to ADMIN>
+####<2026-06-23 08:14:31 IST> <Warning> <EJB> <ms-payments-01> <ExecuteThread: '4' for queue: 'weblogic.kernel.Default'> <> <> <bea-010061> <The Message-Driven Bean PaymentSettlementMDB depends on JMS destination jms/PaymentSettlementQueue, which is not active>
+####<2026-06-23 08:14:35 IST> <Info> <JMS> <ms-payments-01> <ExecuteThread: '5' for queue: 'weblogic.kernel.Default'> <> <> <bea-040305> <JMS server PaymentJMSServer waiting for persistent store PaymentFileStore>
+####<2026-06-23 08:14:37 IST> <Warning> <Store> <ms-payments-01> <ExecuteThread: '5' for queue: 'weblogic.kernel.Default'> <> <> <bea-280061> <The persistent store PaymentFileStore cannot open directory /u01/wls/stores/payments because permission is denied>
+####<2026-06-23 08:14:47 IST> <Warning> <Server> <ms-payments-01> <Timer-2> <<WLS Kernel>> <> <bea-000337> <ExecuteThread: '4' has been busy for 609 seconds working on deployment payments-app>
+####<2026-06-23 08:14:58 IST> <Error> <Deployer> <ms-payments-01> <ExecuteThread: '4' for queue: 'weblogic.kernel.Default'> <> <> <bea-149205> <Failed to initialize application payments-app because MDB destination jms/PaymentSettlementQueue is unavailable>
+####<2026-06-23 08:15:02 IST> <Notice> <WebLogicServer> <ms-payments-01> <main> <<WLS Kernel>> <> <bea-000365> <Server state changed to ADMIN>
+####<2026-06-23 08:15:02 IST> <Warning> <Server> <ms-payments-01> <main> <<WLS Kernel>> <> <bea-000360> <Server failed to reach RUNNING because required application payments-app failed during activation>
+####<2026-06-23 08:15:09 IST> <Info> <Health> <ms-payments-01> <weblogic.GCMonitor> <<WLS Kernel>> <> <bea-310002> <Subsystem JDBC is in state WARNING due to failed pool FinanceXADataSource>
+####<2026-06-23 08:15:14 IST> <Info> <Health> <ms-payments-01> <weblogic.GCMonitor> <<WLS Kernel>> <> <bea-310002> <Subsystem JMS is in state FAILED due to PaymentFileStore permission denied>
+####<2026-06-23 08:15:22 IST> <Warning> <Server> <ms-payments-01> <Timer-3> <<WLS Kernel>> <> <bea-000337> <ExecuteThread: '7' has been busy for 721 seconds waiting for application readiness>
+####<2026-06-23 08:15:33 IST> <Info> <Deployment> <ms-payments-01> <main> <<WLS Kernel>> <> <bea-149515> <Application payments-app is not active on target ms-payments-01>
+####<2026-06-23 08:15:45 IST> <Error> <Server> <ms-payments-01> <main> <<WLS Kernel>> <> <bea-000386> <Server subsystem failed. Root candidates: JDBC database listener unreachable, JMS file store permission denied>

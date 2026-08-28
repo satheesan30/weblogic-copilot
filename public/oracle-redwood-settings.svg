@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" role="img" aria-label="Enterprise redwood abstract background">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b1d1a"/>
+      <stop offset="0.45" stop-color="#6b2e24"/>
+      <stop offset="1" stop-color="#f4efe7"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#14100f" stop-opacity="0.92"/>
+      <stop offset="0.55" stop-color="#55231d" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#d8c8b4" stop-opacity="0.3"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="22%" cy="18%" r="55%">
+      <stop offset="0" stop-color="#ffb06f" stop-opacity="0.38"/>
+      <stop offset="0.55" stop-color="#b33b2c" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#b33b2c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="78%" cy="24%" r="45%">
+      <stop offset="0" stop-color="#fff2d6" stop-opacity="0.52"/>
+      <stop offset="0.58" stop-color="#f1c27a" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#f1c27a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#160f0d" flood-opacity="0.32"/>
+    </filter>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M72 0H0V72" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1800" height="1100" fill="url(#base)"/>
+  <rect width="1800" height="1100" fill="url(#glowA)"/>
+  <rect width="1800" height="1100" fill="url(#glowB)"/>
+  <rect width="1800" height="1100" fill="url(#grid)"/>
+  <path d="M0 780C250 680 405 705 650 780C860 845 1015 900 1260 825C1470 762 1628 644 1800 590V1100H0Z" fill="#f6f1ea" fill-opacity="0.78"/>
+  <path d="M-20 265C210 130 460 105 760 188C1046 267 1304 272 1810 106V0H-20Z" fill="url(#panel)" filter="url(#softShadow)"/>
+  <g opacity="0.48">
+    <path d="M1040 92L1652 92L1520 228L908 228Z" fill="#f2d3a5"/>
+    <path d="M1222 250L1700 250L1580 372L1102 372Z" fill="#9f3329"/>
+    <path d="M860 402L1375 402L1266 513L750 513Z" fill="#34201b"/>
+  </g>
+  <g fill="none" stroke="#fff5e9" stroke-opacity="0.32" stroke-width="2">
+    <path d="M126 190H612"/>
+    <path d="M126 238H510"/>
+    <path d="M126 286H720"/>
+    <path d="M126 334H440"/>
+  </g>
+  <circle cx="1540" cy="160" r="118" fill="#ffffff" fill-opacity="0.08"/>
+  <circle cx="1540" cy="160" r="72" fill="#ffffff" fill-opacity="0.08"/>
+</svg>

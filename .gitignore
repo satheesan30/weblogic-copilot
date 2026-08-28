@@ -1,0 +1,14 @@
+.next/
+.app-data/
+chroma-data/
+test-datasets/large-upload/*.txt
+node_modules/
+.venv/
+out/
+dist/
+.env*
+!.env.example
+yarn-error.log
+
+# build artifact
+tsconfig.tsbuildinfo

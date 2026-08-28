@@ -1,0 +1,37 @@
+model_list:
+  - model_name: weblogic-local
+    litellm_params:
+      model: ollama/qwen3:8b
+      api_base: http://localhost:11434
+
+  - model_name: weblogic-mistral
+    litellm_params:
+      model: ollama/mistral
+      api_base: http://localhost:11434
+
+  - model_name: weblogic-fast
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: weblogic-enterprise
+    litellm_params:
+      model: openai/cohere.command-r-plus
+      api_base: https://inference.generativeai.us-chicago-1.oci.oraclecloud.com/openai/v1
+      api_key: os.environ/OCI_GENAI_API_KEY
+
+litellm_settings:
+  drop_params: true
+  num_retries: 2
+  request_timeout: 60
+  fallbacks:
+    - weblogic-local:
+        - weblogic-mistral
+    - weblogic-mistral:
+        - weblogic-local
+
+router_settings:
+  routing_strategy: simple-shuffle
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY

@@ -1,0 +1,14 @@
+####<2026-06-23 10:21:03 IST> <Info> <JMS> <ms-billing-01> <main> <<WLS Kernel>> <> <bea-040305> <Starting JMS server BillingJMSServer>
+####<2026-06-23 10:21:04 IST> <Info> <Store> <ms-billing-01> <main> <<WLS Kernel>> <> <bea-280009> <Opening file store BillingFileStore at /u02/wls/stores/billing>
+####<2026-06-23 10:21:05 IST> <Error> <Store> <ms-billing-01> <main> <<WLS Kernel>> <> <bea-280060> <The persistent store BillingFileStore detected a corrupted record in file 000000.DAT at offset 884736>
+####<2026-06-23 10:21:05 IST> <Error> <Store> <ms-billing-01> <main> <<WLS Kernel>> <> <bea-280072> <Store boot failed. Expected checksum 990237 but found 118932 for record MessageHandle-774091>
+####<2026-06-23 10:21:06 IST> <Warning> <JMS> <ms-billing-01> <main> <<WLS Kernel>> <> <bea-040498> <JMS server BillingJMSServer failed to activate because persistent store BillingFileStore is unavailable>
+####<2026-06-23 10:21:08 IST> <Error> <EJB> <ms-billing-01> <ExecuteThread: '6' for queue: 'weblogic.kernel.Default'> <> <> <bea-010061> <MDB InvoiceDispatchMDB cannot connect to destination jms/InvoiceDispatchQueue>
+####<2026-06-23 10:21:11 IST> <Warning> <SAF> <ms-billing-01> <ExecuteThread: '7' for queue: 'weblogic.kernel.Default'> <> <> <bea-281203> <SAF agent BillingSAFAgent is paused because the store is not open>
+####<2026-06-23 10:21:19 IST> <Info> <JMS> <ms-billing-01> <ExecuteThread: '2' for queue: 'weblogic.kernel.Default'> <> <> <bea-040127> <Destination jms/InvoiceDispatchQueue has production paused because JMS server is inactive>
+####<2026-06-23 10:21:23 IST> <Error> <Deployer> <ms-billing-01> <ExecuteThread: '10' for queue: 'weblogic.kernel.Default'> <> <> <bea-149205> <billing-app activation failed due to unresolved MDB resource reference jms/InvoiceDispatchQueue>
+####<2026-06-23 10:21:42 IST> <Warning> <Server> <ms-billing-01> <Timer-2> <<WLS Kernel>> <> <bea-000337> <ExecuteThread: '10' has been busy for 611 seconds attempting application activation>
+####<2026-06-23 10:22:00 IST> <Notice> <WebLogicServer> <ms-billing-01> <main> <<WLS Kernel>> <> <bea-000365> <Server state changed to ADMIN>
+####<2026-06-23 10:22:01 IST> <Error> <Health> <ms-billing-01> <weblogic.GCMonitor> <<WLS Kernel>> <> <bea-310003> <Subsystem JMS is FAILED. BillingJMSServer could not open persistent store>
+####<2026-06-23 10:22:16 IST> <Info> <Diagnostics> <ms-billing-01> <Thread-9> <> <> <diag-rca-2004> <Evidence points to corrupted JMS file store record after storage interruption at 10:17 IST>
+####<2026-06-23 10:22:20 IST> <Info> <Diagnostics> <ms-billing-01> <Thread-9> <> <> <diag-rca-2005> <Recommended action: take backup, use store admin recovery, or restore BillingFileStore from last clean snapshot>

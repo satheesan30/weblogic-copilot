@@ -1,0 +1,26 @@
+[llm]
+provider = "litellm"
+endpoint = "http://localhost:4000/v1/chat/completions"
+model = "weblogic-local"
+modelOptions = "weblogic-local,weblogic-mistral,weblogic-fast,weblogic-enterprise"
+apiKeyEnv = "LITELLM_MASTER_KEY"
+temperature = 0.2
+
+[retrieval]
+topK = 6
+chunkSize = 900
+citationMode = "Balanced"
+
+[vectorStore]
+provider = "ChromaDB"
+endpoint = "http://localhost:8000"
+collectionName = "weblogic-knowledge-base"
+persistencePath = "./chroma-data"
+embeddingModel = "nomic-embed-text"
+embeddingEndpoint = "http://localhost:11434/api/embed"
+
+[memory]
+enabled = true
+provider = "ChromaDB"
+collectionName = "weblogic-agent-memory"
+topK = 4

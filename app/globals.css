@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #f5f7ff;
+  --color-ink-soft: #9aa6c3;
+  --color-paper: #091221;
+  --color-paper-2: #101b30;
+  --color-paper-3: #172541;
+  --color-forest: #43d497;
+  --color-forest-deep: #1a9b68;
+  --color-copper: #ffba3d;
+  --color-copper-deep: #e79a17;
+  --color-mist: #293959;
+  --color-line: #243452;
+  --color-danger: #ff6679;
+  --color-ok: #43d497;
+  --font-display: var(--font-display-face), ui-sans-serif, sans-serif;
+  --font-sans: var(--font-body-face), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, monospace;
+}
+
+:root {
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --surface: #101b30;
+  --ring: #6d5dfc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #6d5dfc;
+  color: #fff;
+}
+
+.signal-field {
+  background: var(--color-paper);
+}
+
+.signal-field::before {
+  content: none;
+}
+
+.hero-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #eef5f4;
+  background: #0a1218;
+}
+
+.hero-stage__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  animation: hero-drift 32s ease-in-out infinite alternate;
+}
+
+.hero-stage__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(8, 16, 22, 0.46);
+}
+
+.hero-stage__scan {
+  display: none;
+}
+
+.hero-copy {
+  animation: rise-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-cta {
+  animation: rise-in 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.brand-mark {
+  animation: mark-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-up {
+  animation: rise-in 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 35%;
+}
+
+@supports not (animation-timeline: view()) {
+  .reveal-up {
+    animation: rise-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mark-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.09) translate3d(-1.2%, 1.2%, 0);
+  }
+}
+
+@keyframes scan-sweep {
+  0%,
+  100% {
+    background-position: 0% -40%;
+  }
+  50% {
+    background-position: 0% 140%;
+  }
+}
+
+.desk-panel {
+  background: var(--surface);
+  border: 1px solid var(--color-line);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.35rem;
+  height: 100%;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  width: 2px;
+  transform: scaleY(0);
+  transform-origin: center;
+  background: #6d5dfc;
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link[data-active="true"]::after {
+  transform: scaleY(1);
+}
+
+.command-header {
+  background: rgba(9, 18, 33, 0.94);
+  border-color: var(--color-line);
+}
+
+.app-rail {
+  background: #0c1628;
+  border-color: var(--color-line);
+}
+
+.app-rail__link[data-active="true"] {
+  color: #ffffff;
+  background: #17284a;
+}
+
+.app-rail__link:hover {
+  color: #ffffff;
+  background: #12213d;
+}
+
+.incident-header {
+  border-color: var(--color-line);
+}
+
+@keyframes sheet-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sheet-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage__media,
+  .hero-stage__scan,
+  .hero-copy,
+  .hero-cta,
+  .brand-mark,
+  .reveal-up {
+    animation: none !important;
+  }
+
+  .nav-link::after {
+    transition: none;
+  }
+}

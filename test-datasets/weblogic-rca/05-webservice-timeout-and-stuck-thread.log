@@ -1,0 +1,12 @@
+####<2026-06-23 13:00:01 IST> <Info> <ServletContext-/claims> <ms-claims-03> <ExecuteThread: '15' for queue: 'weblogic.kernel.Default'> <> <> <app-claim-1000> <Received POST /claims/submit correlationId=CLM-887231>
+####<2026-06-23 13:00:03 IST> <Info> <WebService> <ms-claims-03> <ExecuteThread: '15' for queue: 'weblogic.kernel.Default'> <> <> <bea-220500> <Calling downstream SOAP endpoint https://policy-core.internal/ws/PolicyValidation>
+####<2026-06-23 13:00:33 IST> <Warning> <WebService> <ms-claims-03> <ExecuteThread: '15' for queue: 'weblogic.kernel.Default'> <> <> <bea-220501> <Outbound SOAP call still waiting after 30000 ms, endpoint=PolicyValidation, correlationId=CLM-887231>
+####<2026-06-23 13:01:03 IST> <Error> <WebService> <ms-claims-03> <ExecuteThread: '15' for queue: 'weblogic.kernel.Default'> <> <> <bea-220502> <javax.xml.ws.WebServiceException: java.net.SocketTimeoutException: Read timed out>
+####<2026-06-23 13:01:04 IST> <Error> <ServletContext-/claims> <ms-claims-03> <ExecuteThread: '15' for queue: 'weblogic.kernel.Default'> <> <> <bea-101017> <Servlet failed with RuntimeException while processing /claims/submit>
+####<2026-06-23 13:01:42 IST> <Warning> <Server> <ms-claims-03> <Timer-2> <<WLS Kernel>> <> <bea-000337> <ExecuteThread: '23' has been busy for 608 seconds executing com.acme.claims.PolicyClient.validatePolicy>
+####<2026-06-23 13:01:47 IST> <Warning> <Server> <ms-claims-03> <Timer-2> <<WLS Kernel>> <> <bea-000337> <ExecuteThread: '24' has been busy for 613 seconds executing com.acme.claims.PolicyClient.validatePolicy>
+####<2026-06-23 13:01:52 IST> <Warning> <WorkManager> <ms-claims-03> <Timer-2> <<WLS Kernel>> <> <bea-002936> <ClaimsWorkManager pending requests exceeded constraint max-threads=40>
+####<2026-06-23 13:02:08 IST> <Error> <HTTP> <ms-claims-03> <ExecuteThread: '4' for queue: 'weblogic.kernel.Default'> <> <> <bea-101214> <Rejecting request /claims/submit due to WorkManager overload>
+####<2026-06-23 13:02:21 IST> <Info> <Diagnostics> <ms-claims-03> <Thread-3> <> <> <diag-rca-4001> <Confirmed fact: stuck threads are blocked in outbound SOAP read from PolicyValidation service>
+####<2026-06-23 13:02:22 IST> <Info> <Diagnostics> <ms-claims-03> <Thread-3> <> <> <diag-rca-4002> <Probable cause: downstream policy-core service latency or network path issue, not JDBC saturation>
+####<2026-06-23 13:02:24 IST> <Info> <Diagnostics> <ms-claims-03> <Thread-3> <> <> <diag-rca-4003> <Recommended action: check policy-core health, set lower JAX-WS read timeout, isolate work manager>
