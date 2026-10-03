@@ -1,12 +1,11 @@
 export const MAX_UPLOAD_FILE_BYTES = 1024 * 1024 * 1024; // 1 GB
 export const MAX_FILES_PER_REQUEST = 5;
 export const CLIENT_UPLOAD_PART_BYTES = 8 * 1024 * 1024; // 8 MB parts
-export const EMBED_BATCH_SIZE = 8;
+export const EMBED_BATCH_SIZE = 128;
 export const ALLOWED_UPLOAD_EXTENSIONS = new Set([
   ".html",
   ".log",
   ".md",
-  ".pdf",
   ".properties",
   ".txt",
   ".xml",
@@ -21,7 +20,7 @@ export function sanitizeUploadFilename(filename: string) {
 export function validateUploadFile(filename: string, size: number) {
   const extension = filename.includes(".") ? filename.slice(filename.lastIndexOf(".")).toLowerCase() : "";
   if (!ALLOWED_UPLOAD_EXTENSIONS.has(extension)) {
-    return `Unsupported file type '${extension || "unknown"}'. Upload log, txt, md, html, xml, properties, or pdf files.`;
+    return `Unsupported file type '${extension || "unknown"}'. Upload UTF-8 log, txt, md, html, xml, or properties files. PDF extraction is not implemented.`;
   }
   if (size > MAX_UPLOAD_FILE_BYTES) {
     return `File '${filename}' is too large. Max size is 1 GB.`;
